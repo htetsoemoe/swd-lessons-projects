@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shodow</title>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: rgb(41, 4, 4);
+            box-shadow: 10px 10px 5px rgb(15, 37, 240), -10px 10px 5px rgb(15, 37, 240);
+        }
+
+        .photo {
+            width: 200px; /* Using image aspect ratio */
+            display: block; /* Default is inline-block, if you want to set the margin property to inline-block element need to change display type inlin-block to block. */
+            margin: 100px auto;
+            box-shadow: 0 0 40px skyblue; /* right bottom blur color */
+            border: 3px solid skyblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box"></div> -->
+    <img class="photo" src="./images/naw-phaw1.jpg" alt="photo">
+    <!-- <img class="photo" src="./images/naw-phaw1.jpg" alt=""> -->
+</body>
+</html>

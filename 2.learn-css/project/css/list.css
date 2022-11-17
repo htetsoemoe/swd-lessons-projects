@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+:root {
+    --dark: rgb(210, 210, 210);
+}
+
+/* Select all element */
+
+* {
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.list {
+    list-style: none;
+    border: 1px solid var(--dark);
+    width: 200px;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px darkblue;
+}
+
+.list-item {
+    border-bottom: 1px solid var(--dark);
+    width: 100%;
+    padding: 10px;
+}
+
+.list-item img {
+    width: 35px;
+    margin-right: 8px;
+    border-radius: 50%;
+    vertical-align: top;
+}
+
+.list-item p {
+    display: inline-block; /* p default display is block */
+    font-weight: bold;
+}
+
+.list-item .position {
+    color: rgb(6, 90, 123);
+    font-size: 12px;
+}
+
+.nav {
+    border: 1px solid black;
+    list-style: none;
+    background-color: #000000;
+}
+
+.nav-item {
+    /* border: 1px solid black; */
+    display: inline-block;
+}
+
+.nav-link {
+    border: 1px solid black;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background-color: rgb(102, 136, 52);
+}
+
+.nav-link.active {
+    background-color: orange;
+}
+
+.nav-link.active:hover {
+    background-color: orange;
+}
