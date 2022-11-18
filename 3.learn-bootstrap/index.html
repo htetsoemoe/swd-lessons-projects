@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body {
+            height: 6000px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,6 +24,84 @@
         <a href="https://getbootstrap.com" class="btn btn-warning">Learn More</a>
         <a href="#" class="btn btn-outline-warning">By Soe Moe</a>
     </div>
+
+    <div class="bg-light shadow mx-auto py-5 w-50 my-3"></div>
+    <div class="bg-light shadow-sm mx-auto py-5 w-50 my-3"></div>
+    <div class="bg-light shadow-none mx-auto py-5 w-50 my-3"></div>
+    <div class="bg-light shadow-lg mx-auto py-5 w-50 my-3"></div>
+
+    <div class="bg-white border border-3 mx-auto w-50 p-3 overflow-scroll" style="height: 200px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, fugit eligendi necessitatibus libero consequuntur maiores, quidem quibusdam molestias ratione aperiam minima eaque, recusandae nobis reprehenderit atque alias quae ut porro.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus inventore nulla accusamus, molestiae, deleniti doloremque, reiciendis corrupti numquam vitae itaque eum quidem velit nobis! Quis est excepturi eaque cum quam.
+    </div>
+
+    <div class="images mt-5 mx-5">
+        <img src="./images/naw-phaw1.jpg" class="w-25">
+        <img src="./images/naw-phaw1.jpg" class="w-25 opacity-50">
+        <img src="./images/naw-phaw1.jpg" class="w-25 opacity-75">
+    </div>
+
+    <hr>
+
+    <div class="border border-3 p-3 m-5">
+        <div class="p-5 bg-primary d-inline-block"></div>
+        <div class="p-5 bg-primary d-inline-block"></div>
+        <div class="p-5 bg-primary d-inline-block"></div>
+    </div>
+
+    <div class="d-flex justify-content-between border border-3 p-3 m-5">
+        <div class="p-5 bg-primary"></div>
+        <div class="p-5 bg-secondary"></div>
+        <div class="p-5 bg-warning"></div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start border border-3 p-3 m-5" style="height: 300px;">
+        <div class="p-5 bg-primary"></div>
+        <div class="p-5 bg-secondary"></div>
+        <div class="p-5 bg-warning"></div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start border border-3 p-3 m-5" style="height: 300px;">
+        <div class="p-5 bg-primary"></div>
+        <div class="p-5 bg-secondary align-self-center"></div>
+        <div class="p-5 bg-warning align-self-end"></div>
+    </div>
+
+    <div class="bg-dark border border-3 border-primary rounded-3 p-4 m-4"  style="height: 310px;">
+        <img src="./images/naw-phaw1.jpg" class="mb-4 me-4 float-start" style="width: 200px;">
+        <p class="mb-0 text-white text-white-50">   <!--In bootstrap p and heading have default marging width, we need to set mb-0 -->
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, distinctio veritatis! Inventore quia, autem dolores obcaecati minima pariatur expedita quaerat corrupti! Quod facere velit sit iure quae, corporis distinctio voluptate!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt optio qui facere odit dolorum aperiam pariatur corporis eaque sint accusantium. Odio similique nobis beatae eum repellendus excepturi laborum harum dolore?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae architecto sit autem, labore nemo consequuntur illum aspernatur praesentium reiciendis doloribus porro, at voluptatum facilis odio modi atque accusantium exercitationem voluptas.
+        </p>
+    </div>
+
+    <div class="bg-dark border border-3 border-primary rounded-3 p-4 m-4">
+        <img src="./images/naw-phaw1.jpg" class="mb-4 ms-4 float-end"  style="width: 200px;">
+        <p class="mb-0 text-white text-white-50">   <!--In bootstrap p and heading have default marging width, we need to set mb-0 -->
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, distinctio veritatis! Inventore quia, autem dolores obcaecati minima pariatur expedita quaerat corrupti! Quod facere velit sit iure quae, corporis distinctio voluptate!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt optio qui facere odit dolorum aperiam pariatur corporis eaque sint accusantium. Odio similique nobis beatae eum repellendus excepturi laborum harum dolore?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae architecto sit autem, labore nemo consequuntur illum aspernatur praesentium reiciendis doloribus porro, at voluptatum facilis odio modi atque accusantium exercitationem voluptas.
+        </p>
+        <div class="clearfix"></div>
+        <h1 class="text-white-50">Hello</h1>
+        <p class="text-white-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad optio quam quasi, iste modi itaque culpa velit obcaecati placeat sed nesciunt rem eaque ea adipisci ex consequuntur nulla consectetur odio.
+        </p>
+    </div>
+
+    <p class="border border-primary w-25 m-3 p-3 text-break">
+        Lorem ipsum dolor sitsssssssssssssssssssssssssssssssss amet consectetur adipisicing elit. Magnam ipsam porro cumque dolorem nesciunt eligendi officia maiores at laborum illo?
+    </p>
+
+    <div class="badge bg-primary text-wrap" style="width: 6rem;">
+        This text should wrap. 
+    </div>
+
+    <div class="badge bg-primary text-nowrap" style="width: 6rem;">
+        This text should wrap. 
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
