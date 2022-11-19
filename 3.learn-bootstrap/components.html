@@ -16,7 +16,13 @@
 </head>
 <body class="p-3">
 
-    <h3 class="mb-3">Button Components</h3>
+    <div class="p-4 bg-black fixed-top"></div>
+
+    <div class="p-4 bg-danger position-fixed" 
+        style="z-index: 10; bottom: 50px; right: 50px;"
+    ></div>
+
+    <h3 class="mt-5 mb-3">Button Components</h3>
 
     <button class="btn btn-sm btn-outline-primary">Click Me</button>
     <button class="btn btn-sm btn-secondary">Click Me</button>
@@ -87,6 +93,149 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea velit, doloremque nostrum reiciendis eaque sapiente assumenda libero natus! Odio quaerat vitae molestias magnam. Quibusdam, nulla eligendi incidunt natus voluptatibus explicabo.
     </div>
     
+    <hr>
+
+    <h3 class="mb-3">List Group</h3>
+
+    <ul class="list-group list-group-flush mb-3">
+        <li class="list-group-item active">Super Man</li>
+        <li class="list-group-item">Super Man</li>
+        <li class="list-group-item">Super Man</li>
+        <li class="list-group-item">Super Man</li>
+        <li class="list-group-item d-flex justify-content-between">
+            Super Man
+           <div>
+                <button class="btn btn-sm btn-warning">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-warning">
+                    <i class="bi bi-trash"></i>
+                </button>
+           </div>
+        </li>
+    </ul>
+    <br>
+
+    <div class="list-group list-group-flush mb-3">
+        <a href="#" class="list-group-item list-group-item-active">Super Man</a>
+        <a href="#" class="list-group-item list-group-item-active">Super Man</a>
+        <a href="#" class="list-group-item list-group-item-active active">Super Man</a>
+        <a href="#" class="list-group-item list-group-item-active">Super Man</a>
+        <a href="#" class="list-group-item list-group-item-active">Super Man</a>
+    </div>
+    <br>
+
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="">
+                <h3>This is heading 1</h3>
+                <p class="mb-3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, totam.
+                </p>
+            </div>
+            <span class="badge rounded-pill bg-danger">33</span>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="">
+                <h3>This is heading 2</h3>
+                <p class="mb-3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, totam.
+                </p>
+            </div>
+            <span class="badge rounded-pill bg-danger">33</span>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="">
+                <h3>This is heading 3</h3>
+                <p class="mb-3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, totam.
+                </p>
+            </div>
+            <span class="badge rounded-pill bg-danger">33</span>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>Pagination</h3>
+
+    <ul class="pagination">
+        <li class="page-item">
+            <a href="#" class="page-link">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+        </li>
+
+        <li class="page-item">
+            <a href="#" class="page-link">1</a>
+        </li>
+
+        <li class="page-item">
+            <a href="#" class="page-link">2</a>
+        </li>
+
+        <li class="page-item">
+            <a href="#" class="page-link">3</a>
+        </li>
+
+        <li class="page-item">
+            <a href="#" class="page-link">4</a>
+        </li>
+
+        <li class="page-item">
+            <a href="#" class="page-link">
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>Progress Bar</h3>
+
+    <div class="progress">
+        <div class="progress-bar" style="width: 40%;"></div>
+    </div>
+
+    <br>
+
+    <div class="progress" style="height: 10px;">
+        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: 70%;"></div>
+    </div>
+
+    <br>
+    
+    <div class="progress">
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 85%;"></div>
+    </div>
+
+    <hr>
+
+    <h3>Spinner</h3>
+
+    <div class="spinner-border text-info"></div>
+    <div class="spinner-grow text-warning"></div>
+    <br><br>
+
+    <button class="btn btn-primary">
+        <span class="spinner-border spinner-border-sm me-2"></span>
+        Loading
+    </button>
+
+    <button class="btn btn-warning">
+        <span class="spinner-grow spinner-grow-sm me-2"></span>
+        Loading
+    </button>
+
+    <br><hr>
+
+    <button class="btn btn-lg btn-primary position-relative">
+        Click Me
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">20</span>
+    </button>
+
     <hr>
     
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
