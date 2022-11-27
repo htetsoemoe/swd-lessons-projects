@@ -1,0 +1,68 @@
+@import '_header';
+
+$primary : "blue";
+$text-color: "black";
+
+.bg-primary {
+    background-color: $primary;
+    color: $text-color;
+}
+
+.text-primary {
+    background-color: $primary;
+}
+
+.border-primary {
+    background-color: $primary;
+    color: $text-color;
+}
+
+// nesting
+
+.navbar {
+
+    &:hover {
+        box-shadow: 0 0 5px;
+    }
+
+    .nav-brand {
+        color: $text-color;
+    }
+
+    .navbar-nav {
+        color: $text-color;
+
+        .nav-item {
+            border: 1px solid black;
+        }
+
+        .nav-link {
+            color: $text-color;
+
+            &:hover,
+            &.nav-link.active {
+                background-color: $primary;
+                color: white;
+            }
+        }
+
+    }
+}
+
+@import '_footer';
+
+// @mixin - (Just like function)
+@mixin btn($theme: "black") { // default variable
+    background-color: $theme;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid $theme;
+}
+
+.btn-primary {
+    @include btn("blue");
+}
+
+.btn-secondary {
+    @include btn;
+}
