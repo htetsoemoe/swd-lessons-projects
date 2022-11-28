@@ -9,3 +9,6 @@ SWD Lessons and Projects
 
 ## Bootstrap Lessons and Projects
 1. [Bootstrap Lessons](3.learn-bootstrap)
+2. [SASS](4.learn-sass/)
+3. [Customize Bootstrap](4.1customize-bootstrap/)
+4. [Bootstrap Components Customization](4.2bootstrap-components-customization/)
