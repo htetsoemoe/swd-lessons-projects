@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::before {
+            content: "Hello ";
+            color: burlywood;
+        }
+
+        h1::after {
+            content: " Pseudo Element";
+            color: blueviolet;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 1em;
+            background-color: greenyellow;
+        }
+
+        .box {
+            width: 250px;
+            height: 250px;
+            background: skyblue;
+            position: relative;
+        }
+
+        .box::before {
+            display: inline-block;
+            content: "";
+            border: 50px solid black;
+            border-top-color: rgb(67, 84, 122);
+            border-left-color: rgb(67, 84, 122);
+            border-right-color: white;
+            border-bottom-color: white;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .dialog {
+            display: inline-block;
+            width: 250px;
+            height: 70px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background: pink;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .dialog h3 {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        .dialog p {
+            margin: 0;
+        }
+
+        .dialog::after {
+            display: inline-block;
+            content: "";
+            border: 10px solid pink;/* border 10px is width for div.dailog (top, right, bottom, left)*/
+            border-left-color: white;
+            border-right-color: white;
+            border-bottom-color: white;
+            position: absolute;
+            bottom: -20px;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>World</h1>
+
+    <h2>Creating inline block with pseudo element</h2>
+
+    <div class="box"></div>
+    <hr>
+
+    <div class="dialog">
+        <h3>Thaw Thaw</h3>
+        <p>How are you?</p>
+    </div>
+
+</body>
+</html>
