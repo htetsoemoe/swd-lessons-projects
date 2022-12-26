@@ -12,4 +12,9 @@ SWD Lessons and Projects
 2. [SASS](4.learn-sass/)
 3. [Customize Bootstrap](4.1customize-bootstrap/)
 4. [Bootstrap Components Customization](4.2bootstrap-components-customization/)
-4. [CSS Revision](4.3css-revision/)
+5. [CSS transform transition](5.transform-transition/)
+6. [CSS animation](6.animation/)
+7. [CSS revision](4.3css-revision/)
+
+## JavaScript Lessons and Projects
+1. [JavaScript Lessons](7.learn-JS/)
