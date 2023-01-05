@@ -18,3 +18,4 @@ SWD Lessons and Projects
 
 ## JavaScript Lessons and Projects
 1. [JavaScript Lessons](7.learn-JS/)
+2. [DOM Lessons](8.DOM-BOM/) 
