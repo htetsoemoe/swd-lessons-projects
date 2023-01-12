@@ -1,0 +1,388 @@
+CSS
+
+Background
+	background-image: url('./images/photo.jped');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-attachement: fixed;
+	background-size: contain;
+
+	background-size က Cover ပေးခဲ့ရင် Web Page ရဲ့ Width နဲ့ Photo ရဲ့ Width နဲ့ အညီထားသွားမယ်။
+
+	background-size က Contain ပေးခဲ့ရင် Web Page ရဲ့ Height နဲ့ Photo ရဲ့ Height နဲ့ အညီထားသွားမယ်။
+
+
+
+Shadow CSS
+	box-shadow property default position is Right and bottom.
+
+	box-shadow: right bottom blur color, -left bottom blur color;
+
+	********************
+
+	image display property is inline-block.
+
+	********************
+	
+	Searching Keyword for box-shadow --> amazing box-shadow css
+
+
+
+Pseudo-Classes
+	CSS Selector
+	အသုံးပြုသူနှင့် interactive ဖြစ်အောင်ကူညီမယ်။
+	User Event ပေါ်မူတည်ပြီး CSS ကို အချိန်းအပြောင်း လုပ်ပေးမယ်။
+	:hover, :active, :focus
+	Transition Property
+
+
+Other Essential CSS
+	float: right, left;
+	clear: left, right, both;
+		clear only use in block element.
+
+	opacity: 1, ..., 0;
+	overflow: hidden, scroll;
+	visibility: visible, hidden;
+	word-break: break-all;
+	background: color, (img);
+
+
+
+CSS Practical
+
+	CSS Selectors
+		Simple selectors
+		Combinator selectors
+		Pseudo-class selectors
+		Pseudo-elements selectors
+		Attribute selectors
+
+	button
+		Resource: freefrontend.com, coolors, colorsinspo, colorspace, adobe color
+			  font awesome, bootstrap icon, google material icon
+			  cdnjs
+
+	table
+		
+	list
+	card
+	form
+
+
+Flex Box
+	display: flex;
+	
+	********* 4 Properites of flex *************
+	flex-direction: 
+	flex-wrap: 
+	align-content
+	justify-content		--	play child element of x-axis(horizontal)
+	align-items		--	play child element of y-axis(vertical)
+
+
+Responsive Design
+
+	width = 0---- Phone ----->420------ Tablet ------->780----- PC ------>
+
+	max-width: 700px; ဆိုရင် 700 ထက်ထပ်မကျယ်ဘူး။
+
+		@media only screen and (max-width: 600px)  {...}
+		What this query really means, is “If [device width] is less than or equal to 600px, then do {…}”
+
+	min-width: 700px; ဆိုရင် 700 ထက်ထပ်မကျဉ်းဘူး။
+
+		@media only screen and (min-width: 600px)  {...}
+		What this query really means, is “If [device width] is greater than or equal to 600px, then do {…}”
+
+
+--------------------------------------------------------------------------------
+
+		Git
+
+
+
+	Resource for README : readme.so
+
+--------------------------------------------------------------------------------
+
+
+		Bootstrap
+
+	Basic Bootstrap and Components
+	Examples
+	Theme
+
+
+
+--------------------------------------------------------------------------------
+
+
+		Sass for Bootstrap Customization & ( PostCSS in Tailwind )
+	SASS Website
+	CSS Preprocessor in MDN
+		Install Sass Program	->	npm install -g sass
+
+		Compiled		->	sass input.scss output.css
+
+		Hot-reload		->	sass --watch input.scss output.css
+
+		 Directory of C:\Users\DELL\AppData\Roaming\npm
+			
+		Nesting
+
+		Partial
+
+		Mixins (Just like function)
+
+
+
+
+	Customization Bootstrap Components with custom SASS 
+		npm init -y && npm install bootstrap bootstrap-icons
+
+		sass scss/style.scss css/app.css -w
+
+		
+		To Read :
+			https://getbootstrap.com/docs/5.2/components/buttons/
+				CSS
+					Variables, Sass variables, Sass mixins, Sass loops
+
+
+
+		Ref: bootswatch.com (bootstrap customized project examples)
+
+
+
+	        PrugeCSS -> removes not using CSS style from CSS file
+        		prugecss --css css/app.css --content index.html --output ./op
+        
+
+	        Minify CSS in SASS -> 
+        		sass scss/style.scss css/app.css --style=compressed
+
+
+
+		Reference :
+
+			Fonts 
+			Myanmar Unicode Fonts => https://github.com/AungMyoKyaw/Myanmar-Unicode-Fonts
+
+		
+			UI Gradients => uigradients.com
+
+			Gradient Magic => gradientmagic.com
+			
+
+
+		CSS transform and translate
+			Reference :
+				Search in Google => CSS generators 
+							cssportal.com
+
+				clip-path => cssprotal.com, codepen.io/heinhtetzan
+
+			
+			Shorthand property of animation : 
+							animation: name duration timing-function delay iteration-count direction fill-mode
+
+
+
+		CSS Animation Library
+			Reference :
+					cssanimation	=> https://animate.style/
+					Pure CSS Image Hover Effect Library => https://animate.style/	
+
+
+
+-----------------------------------------------------------------------------------
+
+		*************** JavaScript *************** 
+
+	Revision JS Fundamentals
+
+	Reference	:	MDN Documentation
+
+	JS OOP => Class, Object, Inheritance, Method Chain
+	JS Built-in Objects => Date, String, Number, Math, Array, Function, eval(),
+				parseFloat(), parseInt(), isFinite(), isNaN()
+				
+
+
+	Useful Prototype Methods
+
+		. String Methods
+			. length property
+			. substr(start, length)
+			. search()
+			. replace()
+			. toUpperCase(), toLowerCase()
+			. trim()
+			. padStart(), padEnd()
+			. split()
+
+		. Methods for Object
+			. keys()
+			. values()
+
+		. Number Methods
+			. toString()
+			. toFixed()
+			. toPrecision()
+			. Number()
+			. parseInt()
+			. parseFloat()
+			. Math.random(), Math.floor()
+			. Math.ceil()
+
+		. Array Methods
+			. length property
+			. toString(), join()
+			. push(), pop(), shift(), unshift()
+			. sort(), reverse()
+
+
+		
+	
+		CALLBACK FUNCTION
+
+
+			
+
+		Array 
+			length property
+			toString(), join()
+			push(), pop(), shift(), unshift()
+			sort(), reverse()
+			
+
+
+		Popular Array Methods
+			isArray()		map()
+			includes()		filter()
+			indexOf()		find(), findIndex()
+			splice()		reduce()
+			concat()		some()
+			... Spread Operator	every()
+			
+
+
+		ES6 Features
+			... Spread Opreator
+			... Rest Parameter
+			Destructuring
+
+
+		Basic Input & Output
+			window (BOM)
+				window.prompt()
+				window.alert()
+				window.confirm()
+
+			document (DOM)
+			cosole
+				console.log()
+
+
+
+		***** Document Object Model *****
+			
+			Select an element
+				document.getElementById()		=> return HTML Element
+				document.getElementsByTagName()		=> return HTMLCollection
+				document.getElementsByClassName()	=> return HTMLCollection
+
+
+			Get Text
+				selected.innerText
+				selected.innerHTML
+				selected.value
+
+		
+			Set Text
+				selected.innerText = "new text"
+
+
+			Event (Window, Document, Element)
+				onclick = fun()
+				ondbclick = fun()
+
+
+
+
+			More About DOM
+				query selector
+				style & class
+				attribute get & set
+				input value, files
+
+
+			Event Handling
+				- html attribute	<button onclick="alert(`Hello event attribute`)"></button>
+				- property		document.querySelector("#btn").onclick = () => alert(`Hello I'm event property`);
+				- method		document.querySelector("#btn").addEventListener('click', () => alert(`Hello I'm event method`));
+					
+	
+			More About Event
+				Element				Event
+
+				input			-	focus (cusor-in), blur (cusor-out)
+				select,input		-	change
+				form			-	submit
+				window			-	load, scroll
+				
+
+				event parameter
+
+				e.preventDefault()
+
+				this keyword in event	
+                    input.addEventListener("change", function(event) {
+                        // in normal function "this"
+						console.log(this.valueAsDate); // get input element
+
+                        // in arrow function, use "event"
+						console.log(event.target.valueAsDate); 
+					});	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
