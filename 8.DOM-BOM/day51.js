@@ -52,3 +52,6 @@ window.addEventListener('load', () => console.log('Page Loaded...'));
 console.log("Hello 1");
 console.log("Hello 2");
 console.log("Hello 3");
+
+// get event target object
+document.querySelector("#select").addEventListener("click", e => console.log(e));

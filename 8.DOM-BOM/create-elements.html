@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create element</title>
+</head>
+<body>
+    <script>
+        // creating fragments
+        const box = document.createDocumentFragment();
+
+        const h2 = document.createElement("h2");
+        h2.innerText = "I'm the one who want to be with you";
+
+        const p = document.createElement("p");
+        p.innerText = "Just to be the next to be with you";
+
+        const h1 = document.createElement("h1");
+        h1.innerText = "To Be With You";
+
+        box.append(h2);
+        box.append(p);
+        box.prepend(h1);
+
+        true && document.body.append(box);
+    </script>
+</body>
+</html>
