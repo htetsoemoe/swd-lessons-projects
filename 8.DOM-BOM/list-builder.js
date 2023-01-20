@@ -39,10 +39,10 @@ const createLi = (text) => {
         </div>
        
         <div class="btn-group">
-            <button class="btn btn-sm btn-outline-dark" onclick="edit(event)">
+            <button class="btn btn-sm btn-outline-dark edit-btn">
                 <i class="bi bi-pencil pe-none"></i>
             </button>
-            <button class="btn btn-sm btn-outline-dark" onclick="del(event)">
+            <button class="btn btn-sm btn-outline-dark delete-btn">
                 <i class="bi bi-trash3 pe-none"></i>
             </button>
         </div>
@@ -93,6 +93,15 @@ const edit = event => {
 
 // if user enter inputs and click button
 createBtn.addEventListener("click", addList);
+
+// listen child event form parent
+lists.addEventListener("click", event => {
+    if (event.target.classList.contains("edit-btn")) {
+        edit(event);
+    }else if (event.target.classList.contains("delete-btn")) {
+        del(event);
+    }
+});
 
 // if user enter inputs and click enter key
 textInput.addEventListener("keyup", event => {
