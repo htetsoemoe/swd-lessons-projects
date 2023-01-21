@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="">Invoice</h1>
+                <div class="border p-3 mb-5">
+                    <form id="invoiceForm">
+                        <div class="row">
+                            <div class="col">
+                                <div class="">
+                                    <label for="" class="form-label">Select Service</label>
+                                    <select name="" id="selectService" class="form-select">
+                                    </select>
+                                </div> 
+                            </div>
+
+                            <div class="col">
+                                <div class="">
+                                    <label for="" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" id="quantity">
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <button class="btn btn-dark w-100 h-100">
+                                    <i class="bi bi-plus-circle"></i>
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th class="text-end">Quantity</th>
+                            <th class="text-end">Unit Price</th>
+                            <th class="text-end">Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody  id="lists"></tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td class="text-end" colspan="3">Sub Total</td>
+                            <td class="text-end">
+                                $ <span id="subTotal">0</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-end" colspan="3">Tax</td>
+                            <td class="text-end">
+                                $ <span id="tax">0</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-end" colspan="3">Total</td>
+                            <td class="text-end">
+                                $ <span id="total">0</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
