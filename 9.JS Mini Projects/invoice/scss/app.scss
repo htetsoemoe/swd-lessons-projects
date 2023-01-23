@@ -6,3 +6,14 @@ $enable-rounded: false;
 $component-active-bg: black;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// custom CSS
+// style for del-btn in table
+.del-btn {
+    scale: 0;
+    transition: 0.5s;
+}
+
+tr:hover .del-btn {
+    scale: 1;
+}

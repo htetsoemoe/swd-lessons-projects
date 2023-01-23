@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
+   <div id="app">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -18,18 +19,18 @@
                             <div class="col">
                                 <div class="">
                                     <label for="" class="form-label">Select Service</label>
-                                    <select name="" id="selectService" class="form-select">
+                                    <select name="" id="selectService" class="form-select" required>
                                     </select>
-                                </div> 
+                                </div>
                             </div>
-
+    
                             <div class="col">
                                 <div class="">
                                     <label for="" class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" id="quantity">
+                                    <input type="number" class="form-control" id="quantity" required>
                                 </div>
                             </div>
-
+    
                             <div class="col">
                                 <button class="btn btn-dark w-100 h-100">
                                     <i class="bi bi-plus-circle"></i>
@@ -39,7 +40,7 @@
                         </div>
                     </form>
                 </div>
-
+    
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -49,9 +50,9 @@
                             <th class="text-end">Total</th>
                         </tr>
                     </thead>
-
-                    <tbody  id="lists"></tbody>
-
+    
+                    <tbody id="lists"></tbody>
+    
                     <tfoot>
                         <tr>
                             <td class="text-end" colspan="3">Sub Total</td>
@@ -76,6 +77,7 @@
             </div>
         </div>
     </div>
+   </div>
 
     <script src="./js/app.js"></script>
 </body>
