@@ -27,16 +27,19 @@ const app = document.querySelector("#app");
 const invoiceForm = document.querySelector("#invoiceForm")
 const selectService = document.querySelector("#selectService");// selector
 const qunatity = document.querySelector("#quantity");
+const listTable = document.querySelector("#list-table");
 const lists = document.querySelector("#lists");// table body
 const subTotal = document.querySelector("#subTotal");
 const tax = document.querySelector("#tax");
 const total = document.querySelector("#total");
 
 
+
+
 // logics
 // add services to select option
-services.forEach(service => {
-  selectService.append(new Option(service.title, service.id));
+services.forEach(({title, id}) => {
+  selectService.append(new Option(title, id))
 });
 
 // create row with data in table
@@ -74,6 +77,15 @@ const findTotal = () => {
 
 };
 
+// show table
+const showtable = () => {
+  if (lists.children.length) {
+    listTable.classList.remove("d-none");
+  } else {
+    listTable.classList.add("d-none");
+  }
+}
+
 // get all data from 'form inputs'
 invoiceForm.addEventListener("submit", event => {
   event.preventDefault();
@@ -81,7 +93,7 @@ invoiceForm.addEventListener("submit", event => {
   //console.log(selectService.value, qunatity.valueAsNumber, selectedService);
 
   // find selected service object 
-  const selectedService = services.find(service => service.id == selectService.value);
+  const selectedService = services.find(({id}) => id == selectService.value);
   console.log(selectedService);
   
   // check one of the service type (row) is already exist in table
@@ -110,14 +122,19 @@ invoiceForm.addEventListener("submit", event => {
 
   // clear data from inputs
   invoiceForm.reset();
+
+  // show table
+  showtable();
 });
 
+// delete function
 app.addEventListener("click", event => {
   const currentElement = event.target;
   if (currentElement.classList.contains("del-btn")) {
     // delet the row when delet button have been clicked
     currentElement.closest("tr").remove();
     findTotal();
+    showtable();
   }
 });
 
