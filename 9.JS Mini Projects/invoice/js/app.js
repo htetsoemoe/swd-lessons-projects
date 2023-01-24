@@ -32,9 +32,11 @@ const lists = document.querySelector("#lists");// table body
 const subTotal = document.querySelector("#subTotal");
 const tax = document.querySelector("#tax");
 const total = document.querySelector("#total");
-
-
-
+const addServiceOpenBtn = document.querySelector("#addServiceOpenBtn");
+const addServiceModal = document.querySelector("#addServiceModal");
+const addServiceForm = document.querySelector("#addServiceForm"); // Add Service Form
+const serviceCloseBtn = document.querySelector("#serviceCloseBtn"); // close btn of service form
+const serviceAddBtn = document.querySelector("#serviceAddBtn"); // add btn of service form
 
 // logics
 // add services to select option
@@ -136,5 +138,39 @@ app.addEventListener("click", event => {
     findTotal();
     showtable();
   }
+});
+
+// Add New Service function
+addServiceOpenBtn.addEventListener("dblclick", () => {
+  addServiceModal.classList.remove("d-none");
+});
+
+addServiceForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("U are adding new service"); 
+  console.dir(event.target);// event.target returns HTMLFormElement
+
+  // get client input data from 'from inputs' using FormData API
+  const formData = new FormData(event.target); // FormData needs HTMLFormElement
+  console.log(formData.get("serviceTitle"), formData.get("servicePrice"));
+
+  // dynamic id for new service object
+  const id = Date.now();
+
+  // add new Service object to Services Object Array - REST
+  services.push({
+    id,
+    title: formData.get("serviceTitle"),
+    price: formData.get("servicePrice")
+  });
+
+  // add new Service as new option to Select Box
+  selectService.append(new Option(formData.get("serviceTitle"), id));
+
+  // clear form data
+  event.target.reset();
+
+  // close Modal
+  addServiceModal.classList.add("d-none");
 });
 

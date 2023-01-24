@@ -17,3 +17,8 @@ $component-active-bg: black;
 tr:hover .del-btn {
     scale: 1;
 }
+
+// style for modal background color
+.bg-transparent-50 {
+    background-color: rgba(0,0,0, 0.5);
+}

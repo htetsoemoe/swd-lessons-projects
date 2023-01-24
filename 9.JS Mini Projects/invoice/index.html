@@ -24,9 +24,14 @@
                     <div class="border p-3 mb-5 d-print-none">
                         <form id="invoiceForm">
                             <div class="row">
-                                <div class="col">
+                                <div class="col-6">
                                     <div class="">
-                                        <label for="" class="form-label">Select Service</label>
+                                        <label for="" class="form-label">
+                                            Select Service
+                                            <span id="addServiceOpenBtn" class="badge bg-black rounded-pill ms-5">
+                                                Add Service
+                                            </span>
+                                        </label>
                                         <select name="" id="selectService" class="form-select" required>
                                         </select>
                                     </div>
@@ -86,6 +91,34 @@
             </div>
 
             <h1 class="d-none d-print-block">This message will show in print.</h1>
+
+            <!-- Modal -->
+            <div class="d-none position-fixed w-100 top-0 end-0 bg-transparent-50"
+                id="addServiceModal">
+                <div class="row min-vh-100 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="bg-white p-5 mt-5">
+                            <h4>Add New Service</h4>
+                            <hr>
+                            <form action="" id="addServiceForm">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Service Title</label>
+                                    <input type="text" name="serviceTitle" class="form-control" required>
+                                </div>
+                            
+                                <div class="mb-5">
+                                    <label for="" class="form-label">Price</label>
+                                    <input type="number" name="servicePrice" class="form-control" required>
+                                </div>
+                                <button type="button" id="serviceCloseBtn" class="btn btn-outline-dark">
+                                    Close
+                                </button>
+                                <button id="serviceAddBtn" class="btn btn-dark">Add New Service</button>
+                            </form>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
