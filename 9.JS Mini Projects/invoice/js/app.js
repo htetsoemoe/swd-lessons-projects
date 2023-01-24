@@ -145,6 +145,8 @@ addServiceOpenBtn.addEventListener("dblclick", () => {
   addServiceModal.classList.remove("d-none");
 });
 
+serviceCloseBtn.addEventListener("click", () => addServiceModal.classList.add("d-none"));
+
 addServiceForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("U are adding new service"); 
