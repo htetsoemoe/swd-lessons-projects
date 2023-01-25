@@ -33,10 +33,11 @@ const subTotal = document.querySelector("#subTotal");
 const tax = document.querySelector("#tax");
 const total = document.querySelector("#total");
 const addServiceOpenBtn = document.querySelector("#addServiceOpenBtn");
-const addServiceModal = document.querySelector("#addServiceModal");
+// const addServiceModal = document.querySelector("#addServiceModal");
 const addServiceForm = document.querySelector("#addServiceForm"); // Add Service Form
 const serviceCloseBtn = document.querySelector("#serviceCloseBtn"); // close btn of service form
 const serviceAddBtn = document.querySelector("#serviceAddBtn"); // add btn of service form
+const addServiceModal = new bootstrap.Modal("#addServiceModal");
 
 // logics
 // add services to select option
@@ -142,10 +143,11 @@ app.addEventListener("click", event => {
 
 // Add New Service function
 addServiceOpenBtn.addEventListener("dblclick", () => {
-  addServiceModal.classList.remove("d-none");
+  // addServiceModal.classList.remove("d-none");
+  addServiceModal.show();
 });
 
-serviceCloseBtn.addEventListener("click", () => addServiceModal.classList.add("d-none"));
+// serviceCloseBtn.addEventListener("click", () => addServiceModal.classList.add("d-none"));
 
 addServiceForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -173,6 +175,7 @@ addServiceForm.addEventListener("submit", (event) => {
   event.target.reset();
 
   // close Modal
-  addServiceModal.classList.add("d-none");
+  // addServiceModal.classList.add("d-none");
+  addServiceModal.hide();
 });
 

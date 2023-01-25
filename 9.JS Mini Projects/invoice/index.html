@@ -92,8 +92,8 @@
 
             <h1 class="d-none d-print-block">This message will show in print.</h1>
 
-            <!-- Modal -->
-            <div class="d-none position-fixed w-100 top-0 end-0 bg-transparent-50"
+            <!-- Custom Modal -->
+            <!-- <div class="d-none position-fixed w-100 top-0 end-0 bg-transparent-50"
                 id="addServiceModal">
                 <div class="row min-vh-100 justify-content-center">
                     <div class="col-12 col-md-6 col-lg-4">
@@ -118,10 +118,47 @@
                         </div>                       
                     </div>
                 </div>
+            </div> -->
+        </div>
+
+        <!-- Customize Bootstrap Modal with js-->
+        <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addServiceModalLabel">
+                            Add New Service
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="addServiceForm">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Service Title</label>
+                                <input type="text" name="serviceTitle" class="form-control" required />
+                            </div>
+                            <div class="mb-5">
+                                <label for="" class="form-label">Price</label>
+                                <input type="number" name="servicePrice" class="form-control" required />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="serviceCloseBtn" type="button" data-bs-dismiss="modal" class="btn btn-outline-dark">
+                            close
+                        </button>
+                        <button class="btn btn-dark" form="addServiceForm">
+                            Add New
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
 
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 
