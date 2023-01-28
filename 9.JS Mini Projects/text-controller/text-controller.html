@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Controller</title>
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-success">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div style="left: 0; right: 0; width: 500px;" class="mx-auto my-5 p-2" id="output">
+                    Your Text will Appear Here!
+                </div>
+
+                <div style="bottom: 20px; left: 0; right: 0; width: 500px;"
+                    class="row position-fixed mx-auto border rounded px-2 g-3 mt-4 pb-2">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mb-3">
+                            <label class="form-label fw-bold" for="">Say Something</label>
+                            <div class="d-flex align-items-center">
+                                <button id="speechToText" class="btn btn-sm btn-outline-dark me-3">
+                                    <i class="bi bi-mic"></i>
+                                </button>
+
+                                <button id="textToSpeech" class="btn btn-sm btn-outline-dark me-3">
+                                    <i class="bi bi-volume-up"></i>
+                                </button>
+
+                                <div class="fw-bold">
+                                    Count : <span id="count" class="fw-bold">0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <textarea name="" id="text" class="form-control" rows="5"></textarea>
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label fw-bold" for="">Font Family</label>
+                        <select class="form-select" name="" id="fontFamily">
+                            <option value="">Select Font</option>
+                        </select>
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label fw-bold" for="">Select Color</label>
+                        <input type="color" id="color" class="form-control form-control-color w-100" name="">
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label fw-bold" for="">Font Size</label>
+                        <input type="range" id="fontSize" class="form-range" min="0" max="100" value="16" name="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./text-controller.js"></script>
+</body>
+
+</html>
