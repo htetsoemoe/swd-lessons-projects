@@ -77,3 +77,26 @@ createSlideShow.addEventListener("click", () => {
     const allPhotoSrcs = [...document.querySelectorAll(".photo")];
     createCarousel(allPhotoSrcs.map(photo => photo.src));
 });
+
+// create upload multiple photo to application using drag and drop API
+
+uploaderUI.addEventListener("dragover", (event) => {
+    event.preventDefault();
+});
+
+uploaderUI.addEventListener("drop", (event) => {
+    event.preventDefault();
+    console.log(event.dataTransfer.files);
+
+    [...event.dataTransfer.files].forEach(file => {
+        const image = new Image();
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.addEventListener("load", (event) => {
+            image.src = event.target.result; // loaded image file's result "url"
+            image.classList.add("photo", "me-2");
+            photos.append(image);
+        });
+    })
+});
