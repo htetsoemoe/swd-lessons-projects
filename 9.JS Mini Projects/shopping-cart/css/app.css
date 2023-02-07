@@ -5,6 +5,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10768,6 +10769,15 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.product-card-img {
+  height: 100px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.product-card-description {
+  height: 50px;
 }
 
 /*# sourceMappingURL=app.css.map */
