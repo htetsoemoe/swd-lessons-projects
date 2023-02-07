@@ -3,7 +3,28 @@
 // variables
 const productCards = document.querySelector("#productCards");
 
-// create card for product
+// create rating function for product
+const star = no => {
+    let starString = "";
+    for(let i = 1; i <= 5; i++) {
+        if (Math.ceil(no) <= i) { // if no=3 <= 1 and 2 and 3
+            starString += "<i class='bi bi-star'></i>"
+        } else {
+            starString += "<i class='bi bi-star-fill'></i>"
+        }
+    }
+    return starString;
+};
+
+// create description function for product
+const excerpt = (str, maxLength = 70) => {
+    if (str.length > maxLength) {
+        return str.substring(0, maxLength) + " ...";
+    }
+    return str;
+}
+
+// create card function for product
 const createProductCard = (product) => {
     const div = document.createElement("div");
     div.className = "col-12 col-md-6 col-lg-4 product-card";
@@ -20,12 +41,12 @@ const createProductCard = (product) => {
                         ${product.category.replaceAll("-"," ")}
                     </div>
                     <div class="">
-                        ${product.rating}
+                        ${star(product.rating)}
                     </div>
                 </div>
 
                 <p class="text-black-50 small product-card-description">
-                    ${product.description}
+                    ${excerpt(product.description)}
                 </p>
                 <div class="d-flex border-top pt-3 justify-content-between align-items-center">
                     <p class="mb-0">$ ${product.price}</p>
@@ -36,10 +57,9 @@ const createProductCard = (product) => {
     `;
 
     return div;
-}
+};
 
+// append a column with product cards to a 'ProductCards' row
 products.forEach(product => {
-    productCards.append(createProductCard(product));
-})
-
-//${star(product.rating)} ${excerpt(product.description)}
+    productCards.append(createProductCard(product)); 
+});

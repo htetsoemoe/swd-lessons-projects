@@ -561,7 +561,7 @@ const products = [
             "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
         price: 30,
         discountPercentage: 2.92,
-        rating: 4.92,
+        rating: 2.92,
         stock: 54,
         brand: "Golden",
         category: "home-decoration",
