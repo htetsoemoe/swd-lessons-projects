@@ -14,3 +14,10 @@
 .product-card-description {
     height: 50px;
 }
+
+.product-detail-img {
+    height: 300px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
