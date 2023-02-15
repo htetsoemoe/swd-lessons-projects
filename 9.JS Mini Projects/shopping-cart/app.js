@@ -4,6 +4,8 @@
 const productCards = document.querySelector("#productCards");
 const app = document.querySelector("#app");
 const productDetailModal = new bootstrap.Modal("#productDetailModal");
+const productCategories = document.querySelector('#productCategories');
+
 
 // productDetailModal.show();
 
@@ -26,7 +28,28 @@ const excerpt = (str, maxLength = 70) => {
         return str.substring(0, maxLength) + " ...";
     }
     return str;
-}
+};
+
+// functionalities for product category buttons
+const slugToText = (slug) => {
+    return slug.replaceAll("-", " ");
+};
+
+// create category buttons
+const createCategoryBtn = (name) => {
+    const btn = document.createElement("button");
+    btn.className = "btn btn-outline-dark me-2 mb-2 text-capitalize cat";
+    btn.innerText = slugToText(name);
+    btn.setAttribute("cat", name);
+
+    return btn;
+};
+
+// create category buttons with catagories
+categories.forEach(category => {
+    productCategories.append(createCategoryBtn(category))
+});
+
 
 // create card function for product
 const createProductCard = (product) => {
@@ -42,7 +65,7 @@ const createProductCard = (product) => {
 
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <div class="badge text-dark text-capitalize bg-light">
-                        ${product.category.replaceAll("-", " ")}
+                        ${slugToText(product.category)}
                     </div>
                     <div class="">
                         ${star(product.rating)}
@@ -96,6 +119,8 @@ const productDetailCarousel = arr => {
 // create 'Carousel' in 'Modal'
 app.addEventListener('click', event => {
     //console.log(event.target.closest(".product-card"));
+
+    // event.target.closest(".product-card") => get column for clicked product
     if (event.target.closest(".product-card")) {
         const currentCard = event.target.closest(".product-card");
         const currentProductId = currentCard.getAttribute("product-id");
@@ -135,7 +160,7 @@ app.addEventListener('click', event => {
 
             <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
                 <div class="badge text-dark text-capitalize bg-light">
-                    ${currentProduct.category.replaceAll("-", " ")}
+                    ${slugToText(currentProduct.category)}
                 </div>
                 <div class="">
                     ${star(currentProduct.rating)}
@@ -152,3 +177,5 @@ app.addEventListener('click', event => {
         productDetailModal.show();
     }
 });
+
+
