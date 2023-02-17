@@ -86,10 +86,14 @@ const createProductCard = (product) => {
     return div;
 };
 
-// append a column with product cards to a 'ProductCards' row
-products.forEach(product => {
-    productCards.append(createProductCard(product));
-});
+// append a column with product cards to a 'ProductCards' row 
+const renderProductCard = (products) => {
+    products.forEach(product => {
+        productCards.append(createProductCard(product));
+    });
+};
+
+renderProductCard(products);
 
 // create product detail carousel in model-body
 const productDetailCarousel = arr => {
