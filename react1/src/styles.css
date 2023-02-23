@@ -1,0 +1,13 @@
+.heading {
+  color: cyan;
+}
+
+.myCard {
+  background-color: black;
+  color: cyan;
+  border: 5px solid cyan;
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

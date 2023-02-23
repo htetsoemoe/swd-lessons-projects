@@ -1,13 +1,2 @@
-.heading {
-  color: cyan;
-}
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-.card {
-  background-color: black;
-  color: cyan;
-  border: 5px solid cyan;
-  width: 250px;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}

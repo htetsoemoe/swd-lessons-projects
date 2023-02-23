@@ -1,5 +1,7 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
+import "./styles.css";
+import Hello from "./Hello";
 
 const App = () => {
   const array = ["Super Man", "Bat Man", "Iron Man"];
@@ -14,14 +16,20 @@ const App = () => {
       <h1>{true ? "Yes! True..." : "Ahh! False..."}</h1>
       <h1>{true && "Hey There!"}</h1>
 
+      <Hello />
+
       <div>
-        {array.map(item => (
-          <div className="card">
-            <img src="/public/product.jpg" style={{width: "250px"}} alt="" />
+        {array.map((item, i) => (
+          <div className="myCard" key={i}>
+            <img src="./product.jpg" style={{width: "250px"}} alt="" />
             <h1 className="heading">Custom Bike</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, magnam!</p>
           </div>
         ))}
+
+        <p className="text-black-50">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, quam.
+        </p>
       </div>
     </div>
   )
