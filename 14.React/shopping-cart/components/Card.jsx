@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 
 const Card = ({product}) => {
     return (
@@ -16,7 +17,7 @@ const Card = ({product}) => {
                 </p>
             </div>
 
-            <button className="btn btn-primary">Add To Cart</button>
+            <Button />
         </div>
     )
 }
