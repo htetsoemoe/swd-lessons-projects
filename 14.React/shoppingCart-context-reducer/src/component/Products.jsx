@@ -1,14 +1,19 @@
 import React from 'react'
 import { StateContextCustom } from '../context/StateContext'
+import Product from './Product';
 
 const Products = () => {
 
-    const {state} = StateContextCustom()
-    console.log(state);
+    const {state: {products}} = StateContextCustom()
+    console.log(products);
 
     return (
-        <div>
-            <h1 className="text-3xl">Products</h1>
+        <div className='flex flex-wrap justify-center gap-7 mt-10'>
+            {products.map(product => {
+                return (
+                    <Product key={product.id} {...product}/>
+                )
+            })}
         </div>
     )
 }

@@ -6,7 +6,7 @@ const StateContext = createContext()
 export const StateContextProvider = ({children}) => {
     // useState for API data
     const [productList, setProductList] = useState([])
-
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         fetchData()
@@ -14,6 +14,7 @@ export const StateContextProvider = ({children}) => {
 
     useEffect(() => {
         dispatch({ type: "GET_PRODUCTS", payload: productList})
+
     }, [productList])
 
     const fetchData = async () => {
