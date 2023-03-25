@@ -3,8 +3,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { StateContextCustom } from '../context/StateContext'
 
 const Navbar = () => {
-    const {search, setSearch} = StateContextCustom()
-    
+    const {search, setSearch, state:{cart}} = StateContextCustom()
+    console.log(cart);
     return (
         <div className='flex justify-around shadow rounded p-10 items-center'>
             <h2 className='text-3xl font-semibold'>TT Clothing Shop</h2>
@@ -12,7 +12,7 @@ const Navbar = () => {
                 <input type="text" value={search} onChange={e => setSearch(e.target.value)} className="outline-none border-b-2 border-b-gray-500 bg-transparent" />
                 <div className="relative">
                     <AiOutlineShoppingCart className='text-3xl' />
-                    <span className="absolute bottom-5 left-5 h-8 w-7 bg-red-500  flex items-center justify-center rounded-[100%] text-white">0</span>
+                    <span className="absolute bottom-5 left-5 h-8 w-7 bg-red-500  flex items-center justify-center rounded-[100%] text-white">{cart.length}</span>
                 </div>
             </div>
         </div>

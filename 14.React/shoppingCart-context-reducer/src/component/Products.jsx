@@ -5,7 +5,7 @@ import Product from './Product';
 const Products = () => {
 
     const {state: {products}} = StateContextCustom()
-    console.log(products);
+    //console.log(products);
 
     return (
         <div className='flex flex-wrap justify-center gap-7 mt-10'>
