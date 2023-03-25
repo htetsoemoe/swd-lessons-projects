@@ -14,8 +14,9 @@ export const StateContextProvider = ({children}) => {
 
     useEffect(() => {
         dispatch({ type: "GET_PRODUCTS", payload: productList})
-
-    }, [productList])
+        const filterProduct = productList.filter(product => product.title.toLowerCase().includes(search))
+        dispatch({ type: "GET_PRODUCTS", payload: filterProduct })
+    }, [productList, search])
 
     const fetchData = async () => {
         const api = await fetch(`https://fakestoreapi.com/products`)
@@ -33,7 +34,7 @@ export const StateContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const data = {state, dispatch}
+    const data = { state, dispatch, search, setSearch }
     
     return (
         <StateContext.Provider value={data}>
