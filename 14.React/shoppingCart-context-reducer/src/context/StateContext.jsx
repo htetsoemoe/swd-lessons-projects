@@ -7,7 +7,7 @@ export const StateContextProvider = ({children}) => {
     // useState for API data
     const [productList, setProductList] = useState([])
     const [search, setSearch] = useState('')
-
+ 
     useEffect(() => {
         fetchData()
     }, [])
@@ -34,7 +34,7 @@ export const StateContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const data = { state, dispatch, search, setSearch }
+    const data = { state, dispatch, search, setSearch}
     
     return (
         <StateContext.Provider value={data}>

@@ -3,7 +3,12 @@ export const reducer = (state, action) => {
         case "GET_PRODUCTS":
             return {...state, products: action.payload}
         case "ADD_TO_CART":
-            return {...state, cart: [...state.cart, {...action.payload}]}
+            const isExisted = state.cart.find(product => product.id === action.payload.id)
+            if (isExisted) {
+                return state
+            } else {
+                return {...state, cart: [...state.cart, {...action.payload}]}           
+            }
         default:
             return state
     }
