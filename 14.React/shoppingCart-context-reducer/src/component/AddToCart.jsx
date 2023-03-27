@@ -4,7 +4,7 @@ import ProductList from './ProductList'
 import { Link } from 'react-router-dom'
 
 const AddToCart = () => {
-    const { state: { cart } } = StateContextCustom()
+    const { state: { cart }, dispatch } = StateContextCustom()
     console.log(cart);
     const [mainTotal, setMainTotal] = useState(0)
 
@@ -25,7 +25,7 @@ const AddToCart = () => {
 
     return (
         <div>
-            {cart.length > 1 ? (
+            {cart.length >= 1 ? (
                 <div>
                     <div className='flex flex-col mt-10'>
                         {cart?.map(product => {
@@ -39,9 +39,12 @@ const AddToCart = () => {
                         <h2 className='text-gray-500 font-semibold text-2xl'>Total</h2>
                         <p className='font-semibold text-2xl'>$ {mainTotal.toFixed(2)}</p>
                     </div>
+                    <div className="flex justify-center mt-7">
+                        <button onClick={() => dispatch({ type: "CLEAR_CART"})} className='px-3 py-2 bg-red-800 text-white rounded shadow'>Clear Cart</button>
+                    </div>
                 </div>
             ) : (
-                    <div className="flex justify-center gap-5 my-52 items-center">
+                <div className="flex justify-center gap-5 my-52 items-center">
                     <p className='text-red-800 text-2xl'>Please add a product to cart.</p>
                     <Link to='/'>
                         <button className="px-10 py-3 bg-red-800 rounded shadow text-white">Go Shopping</button>

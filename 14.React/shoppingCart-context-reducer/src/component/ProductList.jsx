@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { StateContextCustom } from '../context/StateContext'
 
 const ProductList = ({ product, increaseTotal, decreaseTotal}) => {
     const { id, title, price, image } = product
     const [quantity, setQuantity] = useState(1)
+    const {dispatch} = StateContextCustom()
 
     const increaseQty = () => {
         setQuantity(quantity + 1)
@@ -18,6 +20,12 @@ const ProductList = ({ product, increaseTotal, decreaseTotal}) => {
     }
 
     const oneItemPrice = price * quantity
+
+    // If user remove from one product form a cart, we need to remove that "product" from a "cart" and decrease the "total"
+    const removeHandler = () => {
+        dispatch({ type: "REMOVE_FROM_CART", payload: product })
+        decreaseTotal(oneItemPrice)
+    }
     
     return (
         <div className='flex justify-around items-center mb-10'>
@@ -26,7 +34,7 @@ const ProductList = ({ product, increaseTotal, decreaseTotal}) => {
                 <div>
                     <p className='text-gray-500 font-semibold'>{title.substring(0,15)}...</p>
                     <p className='mb-3'>${oneItemPrice.toFixed(2)}</p>
-                    <p className="cursor-pointer text-red-800">remove</p>
+                    <p onClick={removeHandler} className="cursor-pointer text-red-800">remove</p>
                 </div>
             </div>
 
