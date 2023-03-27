@@ -39,8 +39,9 @@ const AddToCart = () => {
                         <h2 className='text-gray-500 font-semibold text-2xl'>Total</h2>
                         <p className='font-semibold text-2xl'>$ {mainTotal.toFixed(2)}</p>
                     </div>
-                    <div className="flex justify-center mt-7">
-                        <button onClick={() => dispatch({ type: "CLEAR_CART"})} className='px-3 py-2 bg-red-800 text-white rounded shadow'>Clear Cart</button>
+                    <div className="flex justify-center mt-7 gap-5">
+                        <button onClick={() => dispatch({ type: "CLEAR_CART" })} className='px-3 py-2 bg-red-800 text-white rounded shadow'>Clear Cart</button>
+                        <button className='px-3 py-2 bg-gray-800 text-white rounded shadow'>Check Out</button>
                     </div>
                 </div>
             ) : (
