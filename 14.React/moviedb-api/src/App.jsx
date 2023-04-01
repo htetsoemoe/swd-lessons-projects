@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Filter from './component/Filter'
 import Movie from './component/Movie'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const App = () => {
 
   const [popular, setPopular] = useState([])
   const [filtered, setFiltered] = useState([])
+  const [activeGenre, setActiveGenre] = useState(0)
 
   useEffect(() => {
     fetchPopular()
@@ -21,14 +23,16 @@ const App = () => {
 
   return (
     <div>
-      <Filter filtered={filtered} setFiltered={setFiltered}/>
-      <div className='flex flex-wrap gap-10 justify-center items-center mt-16'>
-        {popular.map(movie => {
-          return (
-            <Movie key={movie.id} {...movie} />
-          )
-        })}
-      </div>
+      <Filter popular={popular} filtered={filtered} setFiltered={setFiltered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      <motion.div layout className='flex flex-wrap gap-10 justify-center items-center mt-16'>
+        <AnimatePresence>
+          {filtered.map(movie => {
+            return (
+              <Movie key={movie.id} {...movie} />
+            )
+          })}
+        </AnimatePresence>
+      </motion.div>
     </div>
   )
 }
