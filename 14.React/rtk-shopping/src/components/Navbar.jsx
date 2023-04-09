@@ -4,8 +4,12 @@ import { BsCart4 } from 'react-icons/bs'
 import { Input } from '@mantine/core';
 import { Badge } from '@mantine/core';
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+  const { cartItems } = useSelector(state => state.cart);
+  console.log(cartItems);
+
   return (
     <div className='flex justify-around items-center p-7 shadow-lg'>
       <Link to={'/'}>
@@ -13,16 +17,22 @@ const Navbar = () => {
       </Link>
       <div className="flex gap-8 items-center">
         <Input
-          icon={<AiOutlineSearch  />}
+          icon={<AiOutlineSearch />}
           variant="filled"
           placeholder="Search"
         />
 
-        {/* Later, need to implement conditional render based on product in cart */}
-        <Link to={'/'}>
+        <Link to={'/addtocart'}>
           <div className="relative">
-            <BsCart4 className='text-2xl' />
-            <Badge className='absolute bottom-5 left-4 bg-red-500 text-white' color="red">0</Badge>
+            {/* Implement conditional render based on product in cart */}
+            {(cartItems.length) === 0 ? (
+              <BsCart4 className='text-2xl' />
+            ) : (
+              <>
+                <BsCart4 className='text-2xl' />
+                <Badge className='absolute bottom-5 left-4 bg-red-500 text-white' color="red">{cartItems.length}</Badge>
+              </>
+            )}
           </div>
         </Link>
       </div>
