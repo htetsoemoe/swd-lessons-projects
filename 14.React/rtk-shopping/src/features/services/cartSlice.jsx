@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, {payload}) => {
-            state.cartItems = [...state.cartItems, {payload, quantity: 1}]
+            state.cartItems = [...state.cartItems, {...payload, quantity: 1}]
         }
     }
 })
