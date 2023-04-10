@@ -1,9 +1,12 @@
 import React from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { removeFromCart } from '../features/services/cartSlice'
+import { useDispatch } from 'react-redux'
 
 const Cart = (props) => {
 
     const {id, title, price, image, quantity} = props
+    const dispatch = useDispatch()
 
     return (
         <div className='flex justify-around items-center mb-10'>
@@ -12,15 +15,16 @@ const Cart = (props) => {
                 <div className="">
                     <p className='text-gray-500 font-semibold'>{title.substring(0,20)}...</p>
                     <p className='mb-3'>{price}</p>
-                    <button className='cursor-pointer text-red-800'>remove</button>
+                    <button onClick={() => dispatch(removeFromCart(props))}
+                    className='cursor-pointer text-red-800'>remove</button>
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <p className="cursor-pointer">
+                <p className="cursor-pointer select-none mb-1">
                     <IoIosArrowUp className='text-2xl'/>
                 </p>
-                <p>0</p>
-                <p className="cursor-pointer">
+                <p>{price}</p>
+                <p className="cursor-pointer select-none mt-1">
                     <IoIosArrowDown className='text-2xl'/>
                 </p>
             </div>
