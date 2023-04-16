@@ -11,30 +11,32 @@ const Navbar = () => {
   console.log(cartItems);
 
   return (
-    <div className='flex justify-around items-center p-7 shadow-lg'>
-      <Link to={'/'}>
-        <h2 className="text-2xl font-semibold text-blue-800 hover:text-blue-500">TT Clothing Store</h2>
-      </Link>
-      <div className="flex gap-8 items-center">
-        <Input
-          icon={<AiOutlineSearch />}
-          variant="filled"
-          placeholder="Search"
-        />
-
-        <Link to={'/addtocart'}>
-          <div className="relative">
-            {/* Implement conditional render based on product in cart */}
-            {(cartItems.length) === 0 ? (
-              <BsCart4 className='text-2xl' />
-            ) : (
-              <>
-                <BsCart4 className='text-2xl' />
-                <Badge className='absolute bottom-5 left-4 bg-red-500 text-white' color="red">{cartItems.length}</Badge>
-              </>
-            )}
-          </div>
+    <div className="shadow bg-white">
+      <div className="h-16 mx-auto px-32 flex items-center justify-between">
+        <Link to={'/'}>
+          <h2 className="text-2xl font-semibold text-blue-800 hover:text-blue-500">TT Clothing Store</h2>
         </Link>
+
+        <div className="flex gap-8 items-center">
+          <Input
+            icon={<AiOutlineSearch />}
+            variant="filled"
+            placeholder="Search"
+          />
+          <Link to={'/addtocart'}>
+            <div className="relative">
+              {/* Implement conditional render based on product in cart */}
+              {(cartItems.length) === 0 ? (
+                <BsCart4 className='text-2xl' />
+              ) : (
+                <>
+                  <BsCart4 className='text-2xl' />
+                  <Badge className='absolute bottom-4 left-4 bg-red-500 text-white' color="red">{cartItems.length}</Badge>
+                </>
+              )}
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   )
