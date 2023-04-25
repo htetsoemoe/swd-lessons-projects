@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { addItemsQuantity, removeFromCart, subtractItemQuantity } from '../features/services/cartSlice'
 import { useDispatch } from 'react-redux'
