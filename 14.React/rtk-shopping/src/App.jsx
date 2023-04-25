@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import Products from './components/Products'
 import Navbar from './components/Navbar'
 import AddToCart from './components/AddToCart'
+import Search from './components/Search'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Products />} />
         <Route path='/addtocart' element={<AddToCart />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
    </div>
   )

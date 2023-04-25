@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BsCart4 } from 'react-icons/bs'
 import { Input } from '@mantine/core';
 import { Badge } from '@mantine/core';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   const { cartItems } = useSelector(state => state.cart);
-  console.log(cartItems);
+
+  const [products, setProducts] = useState([])
+  const [search, setSearch] = useState('')
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchProduct()
+  }, [])
+
+  const fetchProduct = async () => {
+    const api = await fetch(`https://fakestoreapi.com/products`)
+    const data = await api.json()
+    setProducts(data)
+  }
+
+  const filterProduct = products.filter(product => product.title.toLowerCase().includes(search))
+
+  const searchHandler = e => {
+    e.preventDefault()
+    // when use type search keyword and click enter
+    navigate('/search', {state:{filterProduct}})
+    //console.log(filterProduct);
+  }
 
   return (
     <div className="shadow bg-white">
@@ -18,11 +41,15 @@ const Navbar = () => {
         </Link>
 
         <div className="flex gap-8 items-center">
-          <Input
-            icon={<AiOutlineSearch />}
-            variant="filled"
-            placeholder="Search"
-          />
+          <form onSubmit={searchHandler}>
+            <Input
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              icon={<AiOutlineSearch />}
+              variant="filled"
+              placeholder="Search"
+            />
+          </form>
           <Link to={'/addtocart'}>
             <div className="relative">
               {/* Implement conditional render based on product in cart */}
