@@ -13,9 +13,14 @@ const Detail = () => {
                 <div className='flex flex-col gap-3 mt-2'>
                     <h2 className="font-semibold">{blog?.title}</h2>
                     <p>{blog?.desc}</p>
-                    <Link to={`/`}>
-                        <button className="bg-zinc-700 text-white px-5 py-1 rounded">Home</button>
-                    </Link>
+                   <div className="flex gap-5">
+                        <Link to={`/`}>
+                            <button className="bg-zinc-700 text-white px-5 py-1 rounded">Home</button>
+                        </Link>
+                        <Link to={`/edit/${blog?.id}`}>
+                            <button className="bg-purple-900 text-white px-5 py-1 rounded">Edit</button>                        
+                        </Link>
+                   </div>
                 </div>
             </div>
         </div>

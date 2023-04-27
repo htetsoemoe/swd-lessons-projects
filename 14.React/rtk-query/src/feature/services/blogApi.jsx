@@ -34,10 +34,19 @@ export const blogApi = createApi({
                 body: id
             }),
             invalidatesTags: ["blogApi"]
+        }),
+
+        getEditBlog: builder.mutation({
+            query: (editBlog) => ({
+                url: `/blogs/${editBlog?.id}`,
+                method: "PATCH",
+                body: editBlog
+            }),
+            invalidatesTags: ["blogApi"]
         })
     }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {useGetBlogsQuery, useGetSingleBlogQuery, useGetCreateBlogMutation, useGetDeleteBlogMutation} = blogApi
+export const {useGetBlogsQuery, useGetSingleBlogQuery, useGetCreateBlogMutation, useGetDeleteBlogMutation, useGetEditBlogMutation} = blogApi
