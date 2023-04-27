@@ -26,9 +26,18 @@ export const blogApi = createApi({
             }),
             invalidatesTags: ["blogApi"]
         }),
+
+        getDeleteBlog: builder.mutation({
+            query: (id) => ({
+                url: `/blogs/${id}`,
+                method: "DELETE",
+                body: id
+            }),
+            invalidatesTags: ["blogApi"]
+        })
     }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const {useGetBlogsQuery, useGetSingleBlogQuery, useGetCreateBlogMutation} = blogApi
+export const {useGetBlogsQuery, useGetSingleBlogQuery, useGetCreateBlogMutation, useGetDeleteBlogMutation} = blogApi
