@@ -1,9 +1,10 @@
 import React from 'react'
+import Path from './routes/Path'
 
 const App = () => {
   return (
     <div>
-      <h1>RTK Query Auth</h1>
+      <Path />
     </div>
   )
 }
