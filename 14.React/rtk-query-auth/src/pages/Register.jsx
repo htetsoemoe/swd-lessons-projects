@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextInput } from '@mantine/core';
 import { PasswordInput } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRegisterMutation } from '../redux/api/authApi';
 
 const Register = () => {
@@ -11,6 +11,8 @@ const Register = () => {
   const [password, setPassword] = useState("")
   const [password_confirmation, setPasswordConfirmation] = useState("")
 
+  const navigate = useNavigate()
+
   const [register] = useRegisterMutation()
 
   // Submit event handler
@@ -18,8 +20,12 @@ const Register = () => {
     try {
       event.preventDefault()
       const user = { name, email, password, password_confirmation }
-      const data = await register(user) // returns Promise object
-      console.log(data)
+      const {data} = await register(user) // returns Promise object
+      //console.log(data.data)
+
+      if (data?.success === true) {
+        navigate('/login')
+      }
     } catch (error) {
       console.log(error)
     }
