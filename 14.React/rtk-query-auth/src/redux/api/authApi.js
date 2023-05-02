@@ -21,10 +21,20 @@ export const authApi = createApi({
                 body: user
             }),
             invalidatesTags: ["auth"]
-        })
+        }),
+
+        // logout needs token from request header
+        logout: builder.mutation({
+            query: (token) => ({
+                url: "/user-logout",
+                method: "POST",
+                headers: {authorization : `Bearer ${token}`}
+            }),
+            invalidatesTags: ["auth"]
+        }),
     }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useRegisterMutation, useLoginMutation } = authApi
+export const { useRegisterMutation, useLoginMutation, useLogoutMutation } = authApi

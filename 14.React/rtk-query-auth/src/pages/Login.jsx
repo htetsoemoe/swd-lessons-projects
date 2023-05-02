@@ -3,6 +3,8 @@ import { TextInput } from '@mantine/core';
 import { PasswordInput } from '@mantine/core';
 import { Link, useNavigate } from 'react-router-dom'
 import { useLoginMutation } from '../redux/api/authApi';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../redux/services/authSlice';
 
 const Login = () => {
   const [email, setEmail] = useState("kohtetmdy@gmail.com")
@@ -11,11 +13,15 @@ const Login = () => {
   const navigate = useNavigate()
   const [login] = useLoginMutation()
 
+  // for add login user to global state using rtk
+  const dispatch = useDispatch()
+
   const loginHandler = async (event) => {
     try {
       event.preventDefault()
       const user = { email, password }
       const {data} = await login(user);
+      dispatch(addUser({user: data?.user, token: data?.token}))
       console.log(data)
       if (data?.success) {
         navigate("/")
