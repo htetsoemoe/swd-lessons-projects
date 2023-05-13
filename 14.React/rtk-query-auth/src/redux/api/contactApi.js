@@ -11,7 +11,7 @@ export const contactApi = createApi({
                 url: '/contact',
                 headers: { authorization: `Bearer ${token}`}
             }),
-            invalidatesTags: ['contact']
+            providesTags: ['contact']
         }),
         createContact: builder.mutation({
             query: ({token, contact}) => ({
