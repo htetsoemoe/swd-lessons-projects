@@ -26,10 +26,9 @@ export const contactApi = createApi({
             query: ({token, id}) => ({
                 url: `/contact/${id}`,
                 method: "DELETE",
-                body: id,
                 headers: {authorization: `Bearer ${token}`},
             }),
-            invalidatesTags: ["contact"]
+            invalidatesTags: ['contact']
         })
     }),
 })
