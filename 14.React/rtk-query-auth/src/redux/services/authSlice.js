@@ -10,12 +10,15 @@ export const authSlice = createSlice({
     name: "authSlice",
     initialState,
     reducers: {
-        addUser: (state, {payload}) => {
+        // addUser used in pages/Login.jsx
+        addUser: (state, {payload}) => { 
             state.user = payload.user;
             state.token = payload.token;
             Cookies.set("user", JSON.stringify(state.user))
             Cookies.set("token", state.token) // no need to stringify 'state.token'
         },
+
+        // removeUserCookie used in pages/Navbar.jsx
         removeUserCookie: (state) => {
             state.user = null,
             state.token = null,

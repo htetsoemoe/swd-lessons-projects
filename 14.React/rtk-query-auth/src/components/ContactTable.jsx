@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { TextInput } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from '../redux/services/contactSlice';
+import Swal from 'sweetalert2'
 
 const ContactTable = () => {
     // Get login user token from Cookie
@@ -25,6 +26,30 @@ const ContactTable = () => {
         dispatch(addContacts(data?.contacts?.data))
     }, [data])
 
+    // delete contact with sweetalert2 confirm box and deleteContact mutation from authApi
+    const deleteHandler = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                const data = await deleteContact({ id, token })// token is default value
+                //console.log(data);
+            }
+        })
+        
+    }
+
     if (isLoading) {
         return (
             <div className="flex justify-center items-center h-screen">
@@ -41,7 +66,7 @@ const ContactTable = () => {
                 <td>{contact?.phone}</td>
                 <td>{contact?.address === null ? 'Mandalay, Myanmar.' : contact?.address}</td>
                 <td>
-                    <button onClick={async () => await deleteContact({ id: contact?.id, token })} className='my-3 mx-14 bg-red-800 text-white px-7 py-1 rounded'>
+                    <button onClick={() => deleteHandler(contact?.id)} className='my-3 mx-14 bg-red-800 text-white px-7 py-1 rounded'>
                         Delete
                     </button>
                 </td>
