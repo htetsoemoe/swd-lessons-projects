@@ -7,6 +7,7 @@ import { TextInput } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts, setSearchTerm } from '../redux/services/contactSlice';
 import Swal from 'sweetalert2'
+import { Menu, Button, rem } from '@mantine/core';
 
 const ContactTable = () => {
     // Get login user token from Cookie
@@ -48,7 +49,7 @@ const ContactTable = () => {
                 //console.log(data);
             }
         })
-        
+
     }
 
     if (isLoading) {
@@ -73,9 +74,28 @@ const ContactTable = () => {
                 <td>{contact?.phone}</td>
                 <td>{contact?.address === null ? 'Mandalay, Myanmar.' : contact?.address}</td>
                 <td>
-                    <button onClick={() => deleteHandler(contact?.id)} className='my-3 mx-14 bg-red-800 text-white px-7 py-1 rounded'>
-                        Delete
-                    </button>
+                    <Menu width={200} shadow="md">
+                        <Menu.Target>
+                            <Button variant='outline'>...</Button>
+                        </Menu.Target>
+
+                        <Menu.Dropdown>
+                            <Menu.Item>
+                                <p onClick={() => deleteHandler(contact?.id)} className='cursor-pointer text-red-900'>
+                                    Delete
+                                </p>
+                                {/* className='my-3 mx-14 bg-red-800 text-white px-7 py-1 rounded' */}
+                            </Menu.Item>
+
+                            <Link to={`/details/${contact?.id}`}>
+                                <Menu.Item>
+                                    <p>
+                                        User Details
+                                    </p>
+                                </Menu.Item>
+                            </Link>
+                        </Menu.Dropdown>
+                    </Menu>
                 </td>
             </tr>
         )
