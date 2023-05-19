@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 import { Link } from 'react-router-dom';
 import { TextInput } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from '../redux/services/contactSlice';
+import { addContacts, setSearchTerm } from '../redux/services/contactSlice';
 import Swal from 'sweetalert2'
 
 const ContactTable = () => {
@@ -21,6 +21,7 @@ const ContactTable = () => {
 
     const dispatch = useDispatch()
     const contacts = useSelector(state => (state.contactSlice.contacts))
+    const searchTerm = useSelector(state => state.contactSlice.searchText)
 
     useEffect(() => {
         dispatch(addContacts(data?.contacts?.data))
@@ -58,7 +59,13 @@ const ContactTable = () => {
         )
     }
 
-    const rows = contacts?.map(contact => {
+    const rows = contacts?.filter(contact => {
+        if (searchTerm === "") {
+            return contact
+        } else if (contact?.name.toLowerCase().includes(searchTerm?.toLowerCase())) {
+            return contact
+        }
+    }).map(contact => {
         return (
             <tr key={contact?.id}>
                 <td>{contact?.name}</td>
@@ -84,6 +91,8 @@ const ContactTable = () => {
                 <TextInput
                     variant="filled"
                     placeholder="Search Contact"
+                    value={searchTerm}
+                    onChange={event => dispatch(setSearchTerm(event.target.value))}
                 />
             </div>
 
